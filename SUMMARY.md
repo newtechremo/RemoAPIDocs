@@ -1,6 +1,6 @@
 # Table of contents
 
-* [보행 분석 API](README.md)
+* [🚶 보행 분석 API](README.md)
   * [보행 비디오 분석 요청](api/undefined.md)
   * [보행 분석 결과 요청](api/undefined-1.md)
   * [보행 분석 그래프 요청](api/undefined-2.md)
