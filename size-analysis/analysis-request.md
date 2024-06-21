@@ -12,17 +12,19 @@ description: 이미지에 있는 측정 대상의 체형과 신체 치수를 분
 
 **파라미터(json)**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>id</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>uuid</code></td><td>string</td><td>task uuid</td><td>true</td></tr><tr><td><code>forigimg</code></td><td>string(base64)</td><td>base64로 인코딩 된 정면 사진</td><td>true</td></tr><tr><td><code>sorigimg</code></td><td>string(base64)</td><td>base64로 인코딩 된 측면 사진</td><td>true</td></tr><tr><td><code>gender</code></td><td>int</td><td>성별(남자:1, 여자:2)</td><td>true</td></tr><tr><td><code>height_mm</code></td><td>int</td><td>분석 대상의 키(mm 단위)</td><td>true</td></tr><tr><td><code>weight_g</code></td><td>int</td><td>분석 대상의 몸무게(g 단위)</td><td>true</td></tr><tr><td><code>age</code></td><td>int</td><td>분석 대상의 나이</td><td>true</td></tr><tr><td><code>birthday</code></td><td>string</td><td>분석 대상의 생년월일 8글자</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>Email</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>UserKey</code></td><td>string</td><td>발급 받은 유저 키 값</td><td>true</td></tr><tr><td><code>APIKey</code></td><td>string</td><td>발급 받은 API 키 값</td><td>true</td></tr><tr><td><code>uuid</code></td><td>string</td><td>task uuid</td><td>true</td></tr><tr><td><code>forigimg</code></td><td>string(base64)</td><td>base64로 인코딩 된 정면 사진</td><td>true</td></tr><tr><td><code>sorigimg</code></td><td>string(base64)</td><td>base64로 인코딩 된 측면 사진</td><td>true</td></tr><tr><td><code>gender</code></td><td>int</td><td>성별(남자:1, 여자:2)</td><td>true</td></tr><tr><td><code>height_mm</code></td><td>int</td><td>분석 대상의 키(mm 단위)</td><td>true</td></tr><tr><td><code>weight_g</code></td><td>int</td><td>분석 대상의 몸무게(g 단위)</td><td>true</td></tr><tr><td><code>age</code></td><td>int</td><td>분석 대상의 나이</td><td>true</td></tr><tr><td><code>birthday</code></td><td>string</td><td>분석 대상의 생년월일 8글자</td><td>true</td></tr></tbody></table>
 
 **응답(json)**
 
-<table><thead><tr><th width="144">Name</th><th width="88">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>data</code></td><td>dict</td><td>결과 dictionary</td></tr><tr><td><code>state</code></td><td>int</td><td>성공 시 0, 실패 시 -1</td></tr><tr><td><code>errors</code></td><td>string</td><td>에러가 발생한 경우 에러메세지 전달</td></tr><tr><td><code>message</code></td><td>string</td><td>처리 관련 안내 메시지</td></tr><tr><td><code>shape_class</code></td><td>int</td><td>0: 사각형, 1: 둥근형, 2: 삼각형, 3: 역삼각형, 4: 모래시계형</td></tr><tr><td><code>shape_size</code></td><td>int</td><td>0 ~ 4까지 값으로 구성. 0 매우 마름, 1: 마름, 2:표준, 3: 과체중, 4: 비만</td></tr><tr><td>chest</td><td>int</td><td>mm 단위, 가슴 둘레</td></tr><tr><td>chest_max</td><td>int</td><td>mm 단위, 가슴 최대 둘레</td></tr><tr><td>chest_min</td><td>int</td><td>mm 단위, 가슴 최소 둘레</td></tr><tr><td>chest_per</td><td>int</td><td>% 단위</td></tr><tr><td>height_per</td><td>int</td><td>% 단위</td></tr><tr><td>hip</td><td>int</td><td>mm 단위, 엉덩이 둘레</td></tr><tr><td>hip_max</td><td>int</td><td>mm 단위, 엉덩이 최대 둘레</td></tr><tr><td>hip_min</td><td>int</td><td>mm 단위, 엉덩이 최소 둘레</td></tr></tbody></table>
+<table><thead><tr><th width="167">Name</th><th width="88">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>data</code></td><td>dict</td><td>결과 dictionary</td></tr><tr><td><code>state</code></td><td>int</td><td>성공 시 0, 실패 시 -1</td></tr><tr><td><code>errors</code></td><td>string</td><td>에러가 발생한 경우 에러메세지 전달</td></tr><tr><td><code>message</code></td><td>string</td><td>처리 관련 안내 메시지</td></tr><tr><td><code>shape_class</code></td><td>int</td><td>0: 사각형, 1: 둥근형, 2: 삼각형, 3: 역삼각형, 4: 모래시계형</td></tr><tr><td><code>shape_size</code></td><td>int</td><td>0 ~ 4까지 값으로 구성. 0 매우 마름, 1: 마름, 2:표준, 3: 과체중, 4: 비만</td></tr><tr><td><code>chest</code></td><td>int</td><td>mm 단위, 가슴 둘레</td></tr><tr><td><code>chest_max</code></td><td>int</td><td>mm 단위, 가슴 최대 둘레</td></tr><tr><td><code>chest_min</code></td><td>int</td><td>mm 단위, 가슴 최소 둘레</td></tr><tr><td><code>chest_per</code></td><td>int</td><td>% 단위</td></tr><tr><td><code>height_per</code></td><td>int</td><td>% 단위</td></tr><tr><td><code>hip</code></td><td>int</td><td>mm 단위, 엉덩이 둘레</td></tr><tr><td><code>hip_max</code></td><td>int</td><td>mm 단위, 엉덩이 최대 둘레</td></tr><tr><td><code>hip_min</code></td><td>int</td><td>mm 단위, 엉덩이 최소 둘레</td></tr></tbody></table>
 
 **요청 예시**
 
 ```json
 {
-  "id": “example2@test.com”,
+  "Email": “example@email.com”,
+  "UserKey": “userkey”,
+  "APIKey": “apikey”,
   "uuid": “55f75582-2c4d-4bd9-9e03-9b75f7bc3058”,
   "forigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)",
   "sorigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)"
@@ -108,4 +110,3 @@ description: 이미지에 있는 측정 대상의 체형과 신체 치수를 분
 ```
 {% endtab %}
 {% endtabs %}
-
