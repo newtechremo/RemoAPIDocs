@@ -69,6 +69,42 @@ rq_dict = {'Email': "your_email", "UserKey": "your_user_key", "APIKey": "your_ap
 res = requests.post("http://api.remo.re.kr/api/analysis-skeleton", json=rq_dict)
 ```
 {% endtab %}
+
+{% tab title="javascript" %}
+```javascript
+import fetch from 'node-fetch';
+import fs from 'fs';
+import { v4 as uuidv4 } from 'uuid';
+
+const fimg_path = "path/to/your/front/image";
+const simg_path = "path/to/your/side/image";
+
+const fimg_b64 = fs.readFileSync(fimg_path, { encoding: 'base64' });
+const simg_b64 = fs.readFileSync(simg_path, { encoding: 'base64' });
+
+const task_uuid = uuidv4();
+const rq_dict = {
+  Email: "your_email",
+  UserKey: "your_user_key",
+  APIKey: "your_api_key",
+  uuid: task_uuid,
+  forigimg: fimg_b64,
+  sorigimg: simg_b64
+};
+
+fetch("http://api.remo.re.kr/api/analysis-skeleton", {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(rq_dict)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+```
+{% endtab %}
 {% endtabs %}
 
 **응답 예시**

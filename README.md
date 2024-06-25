@@ -6,7 +6,7 @@ description: 소개 글
 
 <div align="center">
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot from 2024-06-25 14-52-27.png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
