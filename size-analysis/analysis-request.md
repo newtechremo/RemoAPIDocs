@@ -6,7 +6,7 @@ description: 이미지에 있는 측정 대상의 체형과 신체 치수를 분
 
 ## 이미지 체형 치수 분석 요청
 
-<mark style="color:green;">`POST`</mark> `/analyze/shape-v2`
+<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-shape`
 
 사진(front, side)과 키(height), 몸무게(weight), 나이(age), 성별(gender), 생년월일(birthday)를 입력 받아 신체 체형과 치수를 측정합니다.
 
@@ -22,19 +22,64 @@ description: 이미지에 있는 측정 대상의 체형과 신체 치수를 분
 
 ```json
 {
-  "Email": “example@email.com”,
-  "UserKey": “userkey”,
-  "APIKey": “apikey”,
+  "Email": “your_email”,
+  "UserKey": “your_user_key”,
+  "APIKey": “your_api_key”,
   "uuid": “55f75582-2c4d-4bd9-9e03-9b75f7bc3058”,
-  "forigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)",
-  "sorigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)"
+  "forigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)(이미지를 바이트로 변환한 결과)",
+  "sorigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)(이미지를 바이트로 변환한 결과)"
   "gender": 2,
   "height_mm": 1650,
   "weight_g": 65000,
   "age": 100,
-  "birthday": “20000217”
+  "birthday": “20101010”
  }
 ```
+
+**예시 코드**
+
+{% tabs %}
+{% tab title="curl" %}
+```bash
+curl -X POST "http://api.remo.re.kr/api/analysis-shape" \
+-H "Content-Type: application/json" \
+-d '{
+    "Email": "your_email",
+    "UserKey": "your_user_key",
+    "APIKey": "your_api_key",
+    "uuid": "'$(uuidgen)'",
+    "forigimg": "'$(base64 -w 0 path/to/your/front/image)'",
+    "sorigimg": "'$(base64 -w 0 path/to/your/side/image)'",
+    "gender": 2,
+    "height_mm": 1650,
+    "weight_g": 65000,
+    "age": 15,
+    "birthday": "20101010"
+}'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+import requests
+import uuid
+import base64
+
+fimg_path = "path/to/your/front/image"
+simg_path = "path/to/your/side/image"
+
+with open(fimg_path, "rb") as img_file:
+    fimg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
+with open(simg_path, "rb") as img_file:
+    simg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
+
+task_uuid = str(uuid.uuid4())
+rq_dict = {'Email': "your_email", "UserKey": "your_user_key", "APIKey": "your_api_key", 'uuid': task_uuid, "forigimg": fimg_b64, "sorigimg": simg_b64, "gender": 2, "height_mm": 1650, "weight_g": 65000, "age": 15, "birthday": "20101010"}
+
+res = requests.post("http://api.remo.re.kr/api/analysis-shape", json=rq_dict)
+```
+{% endtab %}
+{% endtabs %}
 
 **응답 예시**
 

@@ -6,7 +6,7 @@ description: 이미지에 있는 측정 대상의 골격(skeleton)을 분석하�
 
 ## 이미지 골격 분석 요청
 
-<mark style="color:green;">`POST`</mark> `/analyze/skeleton-v2`
+<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-skeleton`
 
 사진(front, side)과 키(height), 몸무게(weight), 나이(age), 성별(gender), 생년월일(birthday)를 입력 받아 신체 골격을 분석합니다.
 
@@ -26,10 +26,50 @@ description: 이미지에 있는 측정 대상의 골격(skeleton)을 분석하�
   "UserKey": “userkey”,
   "APIKey": “apikey”,
   "uuid": “55f75582-2c4d-4bd9-9e03-9b75f7bc3058”,
-  "forigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)(이미지를 바이트로 변환한  결과)",
-  "sorigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)(이미지를 바이트로 변환한  결과)"
+  "forigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)(이미지를 바이트로 변환한 결과)",
+  "sorigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)(이미지를 바이트로 변환한 결과)"
  }
 ```
+
+**예시 코드**
+
+{% tabs %}
+{% tab title="curl" %}
+```bash
+curl -X POST "http://api.remo.re.kr/api/analysis-skeleton" \
+-H "Content-Type: application/json" \
+-d '{
+    "Email": "your_email",
+    "UserKey": "your_user_key",
+    "APIKey": "your_api_key",
+    "uuid": "'$(uuidgen)'",
+    "forigimg": "'$(base64 -w 0 path/to/your/front/image)'",
+    "sorigimg": "'$(base64 -w 0 path/to/your/side/image)'"
+}'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+import requests
+import uuid
+import base64
+
+fimg_path = "path/to/your/front/image"
+simg_path = "path/to/your/side/image"
+
+with open(fimg_path, "rb") as img_file:
+    fimg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
+with open(simg_path, "rb") as img_file:
+    simg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
+
+task_uuid = str(uuid.uuid4())
+rq_dict = {'Email': "your_email", "UserKey": "your_user_key", "APIKey": "your_api_key", 'uuid': task_uuid, "forigimg": fimg_b64, "sorigimg": simg_b64}
+
+res = requests.post("http://api.remo.re.kr/api/analysis-skeleton", json=rq_dict)
+```
+{% endtab %}
+{% endtabs %}
 
 **응답 예시**
 
