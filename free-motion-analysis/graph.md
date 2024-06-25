@@ -6,11 +6,11 @@ description: 완료된 보행 분석 그래프 값을 요청하는 API입니다.
 
 ## 자유 모션 분석 그래프 요청
 
-<mark style="color:green;">`POST`</mark> `/get-angles`
+<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-FreeMotion-angle`
 
-사용자 id(이메일), 분석된 비디오 uuid, joint(각도 출력을 원하는 부위)를 URL 파라미터로 받아 그래프를 그리는 데 필요한 각도 값을 Return합니다.
+사용자 id(이메일), 분석된 비디오 uuid, joint(각도 출력을 원하는 부위)를 파라미터로 받아 그래프를 그리는 데 필요한 각도 값을 Return합니다.
 
-**파라미터(url)**
+**파라미터(json)**
 
 <table><thead><tr><th width="110">Name</th><th width="88">Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>id</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>uuid</code></td><td>string</td><td>영상 uuid</td><td>true</td></tr><tr><td><code>joint</code></td><td>string</td><td>"Hip", "Knee", "Ankle", "Shoulder", "Elbow", "Wrist", "Spine", "Neck" 중 택1</td><td>true</td></tr></tbody></table>
 

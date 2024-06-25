@@ -6,11 +6,11 @@ description: 완료된 보행 분석 결과 영상을 요청하는 API입니다.
 
 ## 보행 분석 결과 영상 요청
 
-<mark style="color:red;">`GET`</mark> `/get-draw/{id}/{uuid}`
+<mark style="color:green;">`POST`</mark>`http://api.remo.re.kr/api/analysis-walking-draw`
 
-사용자 id(이메일), 분석된 비디오 uuid를 URL 파라미터로 원본 영상에 결과를 그린 비디오(base64)를 Return합니다.
+사용자 id(이메일), 분석된 비디오 uuid를 파라미터로 원본 영상에 결과를 그린 비디오(base64)를 Return합니다.
 
-**파라미터(url)**
+**파라미터(json)**
 
 <table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>id</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>uuid</code></td><td>string</td><td>영상 uuid</td><td>true</td></tr></tbody></table>
 
@@ -55,4 +55,3 @@ description: 완료된 보행 분석 결과 영상을 요청하는 API입니다.
 ```
 {% endtab %}
 {% endtabs %}
-

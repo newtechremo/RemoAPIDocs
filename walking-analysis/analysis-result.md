@@ -6,11 +6,11 @@ description: 완료된 보행 분석 결과를 요청하는 API입니다.
 
 ## 보행 분석 결과 요청
 
-<mark style="color:red;">`GET`</mark> `/get-result/{id}/{uuid}`
+<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-walking-result`
 
-사용자 id(이메일), 분석된 비디오 uuid를 URL 파라미터로 받아 보행 분석 결과 값을 Return합니다.
+사용자 id(이메일), 분석된 비디오 uuid를 파라미터로 받아 보행 분석 결과 값을 Return합니다.
 
-**파라미터(url)**
+**파라미터(json)**
 
 <table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>id</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>uuid</code></td><td>string</td><td>영상 uuid</td><td>true</td></tr></tbody></table>
 
@@ -90,4 +90,3 @@ description: 완료된 보행 분석 결과를 요청하는 API입니다.
 {% endtabs %}
 
 <figure><img src="../.gitbook/assets/Screenshot from 2024-05-10 17-29-33.png" alt=""><figcaption></figcaption></figure>
-

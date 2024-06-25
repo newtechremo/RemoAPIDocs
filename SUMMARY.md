@@ -4,7 +4,6 @@
   * [보행 비디오 분석 요청](walking-analysis/video.md)
   * [보행 분석 결과 요청](walking-analysis/analysis-result.md)
   * [보행 분석 그래프 요청](walking-analysis/graph.md)
-  * [보행 분석 원본 영상 요청](walking-analysis/original-video.md)
   * [보행 분석 결과 영상 요청](walking-analysis/result-video.md)
 * [자유 모션 분석 API](free-motion-analysis/README.md)
   * [자유 모션 비디오 분석 요청](free-motion-analysis/video.md)

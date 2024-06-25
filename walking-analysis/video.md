@@ -6,7 +6,7 @@ description: 비디오를 입력 받아 사용자의 보행을 분석하는 API�
 
 ## 보행 비디오 분석 요청
 
-<mark style="color:green;">`POST`</mark> `/walking-analysis-wait`
+<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-walking`
 
 보행 비디오를 입력 받아 분석 완료 시까지 대기할 시간을 Return합니다.
 
@@ -20,7 +20,7 @@ description: 비디오를 입력 받아 사용자의 보행을 분석하는 API�
 
 **요청 예시**
 
-<pre class="language-json"><code class="lang-json">{
+<pre class="language-html"><code class="lang-html">{
 <strong>    “base64_video”: “AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAK/7BtZGF0AAACugYF … (이하 생략)”,
 </strong>    “id”: “example@example.com”,
     “uuid”: "d4147f2c-b5cc-4289-9325-94dbbef26d67"
@@ -60,4 +60,3 @@ description: 비디오를 입력 받아 사용자의 보행을 분석하는 API�
 ```
 {% endtab %}
 {% endtabs %}
-
