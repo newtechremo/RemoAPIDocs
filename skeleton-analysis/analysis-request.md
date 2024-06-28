@@ -4,7 +4,7 @@ description: 이미지에 있는 측정 대상의 골격(skeleton)을 분석하�
 
 # 이미지 골격 분석 요청
 
-## 이미지 골격 분석 요청
+이미지 골격 분석 요청
 
 <mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-skeleton`
 
@@ -16,7 +16,7 @@ description: 이미지에 있는 측정 대상의 골격(skeleton)을 분석하�
 
 **응답(json)**
 
-<table><thead><tr><th width="255">Name</th><th width="94">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>uuid</code></td><td>string</td><td>파라미터로 전달 받은 uuid</td></tr><tr><td><code>forigimg</code></td><td>string</td><td>정면 사진에 결과를 그려 base64로 인코딩된 이미지</td></tr><tr><td><code>sorigimg</code></td><td>string</td><td>측면 사진에 결과를 그려 base64로 인코딩된 이미지</td></tr><tr><td><code>data</code></td><td>dict</td><td>결과 dictionary</td></tr><tr><td><code>state</code></td><td>int</td><td>성공 시 0, 실패 시 -1</td></tr><tr><td><code>far_coords</code></td><td>string</td><td>json string으로 변환된 정면 2D keypoint</td></tr><tr><td><code>side_part</code></td><td>float</td><td>측면 사진의 사람이 어느 방향으로 서있는지. 0보다 작으면 왼쪽, 크면 오른쪽.</td></tr><tr><td><code>sar_coords</code></td><td>string</td><td>json string으로 변환된 측면 2D keypoint</td></tr><tr><td><code>far_head_bal_m_</code></td><td>int</td><td>머리 균형도(머리 기울기)</td></tr><tr><td><code>far_pelvic_bal_m_</code></td><td>int</td><td>골반 균형도(골반 기울기)</td></tr><tr><td><code>far_shoulder_bal_m_</code></td><td>int</td><td>어깨 균형도(어깨 기울기)</td></tr><tr><td><code>far_left_qang_m_</code></td><td>int</td><td>왼쪽 오다리값</td></tr><tr><td><code>far_right_qang_m_</code></td><td>int</td><td>오른쪽 오다리 값</td></tr><tr><td><code>far_knee_bal_m_</code></td><td>int</td><td>무릎 균형도(무릎 기울기)</td></tr><tr><td><code>far_tilt_m_</code></td><td>int</td><td>정면 축 기울기(좌우 기울기)</td></tr><tr><td><code>turtle_neck_m_</code></td><td>int</td><td>거북목 기울기</td></tr><tr><td><code>round_shoulder_m_</code></td><td>int</td><td>굽은 어께 기울기</td></tr><tr><td><code>sar_tilt_m_</code></td><td>int</td><td>측면 기울기(앞뒤 기울기)</td></tr><tr><td><code>sar_head_tilt_m_</code></td><td>int</td><td>측면 머리 균형도(측면 머리 기울기)</td></tr></tbody></table>
+<table><thead><tr><th width="244">Name</th><th width="94">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>uuid</code></td><td>string</td><td>파라미터로 전달 받은 uuid</td></tr><tr><td><code>forigimg</code></td><td>string</td><td>정면 사진에 결과를 그려 base64로 인코딩된 이미지</td></tr><tr><td><code>sorigimg</code></td><td>string</td><td>측면 사진에 결과를 그려 base64로 인코딩된 이미지</td></tr><tr><td><code>data</code></td><td>dict</td><td>결과 dictionary</td></tr><tr><td><code>state</code></td><td>int</td><td>성공 시 0, 실패 시 -1</td></tr><tr><td><code>far_coords</code></td><td>string</td><td>json string으로 변환된 정면 2D keypoint</td></tr><tr><td><code>side_part</code></td><td>float</td><td>측면 사진의 사람이 어느 방향으로 서있는지. 0보다 작으면 왼쪽, 크면 오른쪽.</td></tr><tr><td><code>sar_coords</code></td><td>string</td><td>json string으로 변환된 측면 2D keypoint</td></tr><tr><td><code>far_head_bal_m_</code></td><td>int</td><td>머리 균형도(머리 기울기)</td></tr><tr><td><code>far_pelvic_bal_m_</code></td><td>int</td><td>골반 균형도(골반 기울기)</td></tr><tr><td><code>far_shoulder_bal_m_</code></td><td>int</td><td>어깨 균형도(어깨 기울기)</td></tr><tr><td><code>far_left_qang_m_</code></td><td>int</td><td>왼쪽 오다리값</td></tr><tr><td><code>far_right_qang_m_</code></td><td>int</td><td>오른쪽 오다리 값</td></tr><tr><td><code>far_knee_bal_m_</code></td><td>int</td><td>무릎 균형도(무릎 기울기)</td></tr><tr><td><code>far_tilt_m_</code></td><td>int</td><td>정면 축 기울기(좌우 기울기)</td></tr><tr><td><code>turtle_neck_m_</code></td><td>int</td><td>거북목 기울기</td></tr><tr><td><code>round_shoulder_m_</code></td><td>int</td><td>굽은 어께 기울기</td></tr><tr><td><code>sar_tilt_m_</code></td><td>int</td><td>측면 기울기(앞뒤 기울기)</td></tr><tr><td><code>sar_head_tilt_m_</code></td><td>int</td><td>측면 머리 균형도(측면 머리 기울기)</td></tr></tbody></table>
 
 **요청 예시**
 
@@ -158,3 +158,56 @@ fetch("http://api.remo.re.kr/api/analysis-skeleton", {
 ```
 {% endtab %}
 {% endtabs %}
+
+
+
+요청 이미치 결과 보기
+
+{% tabs %}
+{% tab title="Python" %}
+```
+import requests
+import uuid
+import base64
+import cv2
+import numpy as np
+import uuid
+
+fimg_path = "path/to/your/front/image"
+simg_path = "path/to/your/side/image"
+
+with open(fimg_path, "rb") as img_file:
+    fimg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
+with open(simg_path, "rb") as img_file:
+    simg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
+
+task_uuid = str(uuid.uuid4())
+rq_dict = {'Email': "your_email", "UserKey": "your_user_key", "APIKey": "your_api_key", 'uuid': task_uuid, "forigimg": fimg_b64, "sorigimg": simg_b64}
+res = requests.post("http://api.remo.re.kr/api/analysis-skeleton", json=rq_dict).json()
+
+#정면 이미지 분석 결과 데이터를 byte데이터에서 array 데이터로 변환
+fimg_b64 = res["forigimg"] 
+f_bytes = base64.b64decode(split_b64_video(fimg_b64).encode('utf-8'))
+front_nparr = np.frombuffer(f_bytes, np.uint8)
+front_img = cv2.imdecode(front_nparr, cv2.IMREAD_COLOR)
+
+#측면 이미지 분석 결과 데이터를 byte데이터에서 array 데이터로 변환
+simg_b64 = res["sorigimg"] #측면 이미지 분석 결과 데이터
+s_bytes = base64.b64decode(split_b64_video(simg_b64).encode('utf-8'))
+side_nparr = np.frombuffer(s_bytes, np.uint8)
+side_img = cv2.imdecode(side_nparr, cv2.IMREAD_COLOR)
+
+# Display the image using OpenCV
+cv2.imshow('front_img', front_img)
+cv2.imshow('side_img', side_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+{% endtab %}
+{% endtabs %}
+
+결과 이미지
+
+<figure><img src="../.gitbook/assets/forig.jpg" alt="" width="375"><figcaption><p>fronigimg</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/sorig.jpg" alt="" width="375"><figcaption><p>sorigimg</p></figcaption></figure>
