@@ -4,7 +4,7 @@ description: 이미지에 있는 대상의 체형 변화 시 예측 이미지를
 
 # 이미지 미래 체형 생성 요청
 
-## bool이미지 미래 체형 생성 요청
+## 이미지 미래 체형 생성 요청
 
 <mark style="color:green;">`POST`</mark> `/generate-image`
 
@@ -12,11 +12,11 @@ description: 이미지에 있는 대상의 체형 변화 시 예측 이미지를
 
 **파라미터(json)**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>imagePath</code></td><td>string</td><td>이미지 주소</td><td>true</td></tr><tr><td><code>requestMessage</code></td><td>string</td><td>“best” : 살이 빠진 모습, “worst” : 살이 찐 모습</td><td>true</td></tr><tr><td><code>gender</code></td><td>string</td><td>“male” : 남자, “female” : 여자</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th width="213">Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>imagePath</code></td><td>string</td><td>이미지 주소</td><td>true</td></tr><tr><td><code>requestMessage</code></td><td>string</td><td>“best” : 살이 빠진 모습, “worst” : 살이 찐 모습</td><td>true</td></tr><tr><td><code>gender</code></td><td>string</td><td>“male” : 남자, “female” : 여자</td><td>true</td></tr></tbody></table>
 
 **응답(json)**
 
-<table><thead><tr><th width="144">Name</th><th width="88">Type</th><th>Description</th></tr></thead><tbody><tr><td>state</td><td>bool</td><td>True이면 분석 성공, False이면 분석 실패</td></tr><tr><td>message</td><td>string</td><td>분석 실패 시 문제가 발생한 부분</td></tr><tr><td>resultImage</td><td>string</td><td>결과 이미지(Base64 형식)</td></tr></tbody></table>
+<table><thead><tr><th width="172">Name</th><th width="88">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>state</code></td><td>bool</td><td>True이면 분석 성공, False이면 분석 실패</td></tr><tr><td><code>message</code></td><td>string</td><td>분석 실패 시 문제가 발생한 부분</td></tr><tr><td><code>resultImage</code></td><td>string</td><td>결과 이미지(Base64 형식)</td></tr></tbody></table>
 
 **요청 예시**
 
@@ -58,4 +58,3 @@ description: 이미지에 있는 대상의 체형 변화 시 예측 이미지를
 ```
 {% endtab %}
 {% endtabs %}
-

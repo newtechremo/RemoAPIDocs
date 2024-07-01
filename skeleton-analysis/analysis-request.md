@@ -4,7 +4,7 @@ description: 이미지에 있는 측정 대상의 골격(skeleton)을 분석하�
 
 # 이미지 골격 분석 요청
 
-이미지 골격 분석 요청
+### 이미지 골격 분석 요청
 
 <mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-skeleton`
 
@@ -16,7 +16,7 @@ description: 이미지에 있는 측정 대상의 골격(skeleton)을 분석하�
 
 **응답(json)**
 
-<table><thead><tr><th width="244">Name</th><th width="94">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>uuid</code></td><td>string</td><td>파라미터로 전달 받은 uuid</td></tr><tr><td><code>forigimg</code></td><td>string</td><td>정면 사진에 결과를 그려 base64로 인코딩된 이미지</td></tr><tr><td><code>sorigimg</code></td><td>string</td><td>측면 사진에 결과를 그려 base64로 인코딩된 이미지</td></tr><tr><td><code>data</code></td><td>dict</td><td>결과 dictionary</td></tr><tr><td><code>state</code></td><td>int</td><td>성공 시 0, 실패 시 -1</td></tr><tr><td><code>far_coords</code></td><td>string</td><td>json string으로 변환된 정면 2D keypoint</td></tr><tr><td><code>side_part</code></td><td>float</td><td>측면 사진의 사람이 어느 방향으로 서있는지. 0보다 작으면 왼쪽, 크면 오른쪽.</td></tr><tr><td><code>sar_coords</code></td><td>string</td><td>json string으로 변환된 측면 2D keypoint</td></tr><tr><td><code>far_head_bal_m_</code></td><td>int</td><td>머리 균형도(머리 기울기)</td></tr><tr><td><code>far_pelvic_bal_m_</code></td><td>int</td><td>골반 균형도(골반 기울기)</td></tr><tr><td><code>far_shoulder_bal_m_</code></td><td>int</td><td>어깨 균형도(어깨 기울기)</td></tr><tr><td><code>far_left_qang_m_</code></td><td>int</td><td>왼쪽 오다리값</td></tr><tr><td><code>far_right_qang_m_</code></td><td>int</td><td>오른쪽 오다리 값</td></tr><tr><td><code>far_knee_bal_m_</code></td><td>int</td><td>무릎 균형도(무릎 기울기)</td></tr><tr><td><code>far_tilt_m_</code></td><td>int</td><td>정면 축 기울기(좌우 기울기)</td></tr><tr><td><code>turtle_neck_m_</code></td><td>int</td><td>거북목 기울기</td></tr><tr><td><code>round_shoulder_m_</code></td><td>int</td><td>굽은 어께 기울기</td></tr><tr><td><code>sar_tilt_m_</code></td><td>int</td><td>측면 기울기(앞뒤 기울기)</td></tr><tr><td><code>sar_head_tilt_m_</code></td><td>int</td><td>측면 머리 균형도(측면 머리 기울기)</td></tr></tbody></table>
+<table><thead><tr><th width="282">Name</th><th width="94">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>uuid</code></td><td>string</td><td>파라미터로 전달 받은 uuid</td></tr><tr><td><code>forigimg</code></td><td>string</td><td>정면 사진에 결과를 그려 base64로 인코딩된 이미지</td></tr><tr><td><code>sorigimg</code></td><td>string</td><td>측면 사진에 결과를 그려 base64로 인코딩된 이미지</td></tr><tr><td><code>data</code></td><td>dict</td><td>결과 dictionary</td></tr><tr><td><code>state</code></td><td>int</td><td>성공 시 True, 실패 시 False</td></tr><tr><td><code>far_coords</code></td><td>string</td><td>json string으로 변환된 정면 2D keypoint</td></tr><tr><td><code>side_part</code></td><td>float</td><td>측면 사진의 사람이 어느 방향으로 서있는지. 0보다 작으면 왼쪽, 크면 오른쪽.</td></tr><tr><td><code>sar_coords</code></td><td>string</td><td>json string으로 변환된 측면 2D keypoint</td></tr><tr><td><code>far_head_bal_m_</code></td><td>float</td><td>머리 균형도(머리 기울기). degree 단위.</td></tr><tr><td><code>far_head_bal_grade</code></td><td>int</td><td><p>머리 균형도(머리 기울기).<br>-2 : 왼쪽 기울어짐 위험(value&#x3C;=-4) </p><p>-1 : 왼쪽 기울어짐 주의(-4&#x3C;value&#x3C;=-1) </p><p>0 : 정상(-1&#x3C;value&#x3C;1) </p><p>1 : 오른쪽 기울어짐 주의(1&#x3C;=value&#x3C;4) </p><p>2 : 오른쪽 기울어짐 위험(value>=4)</p></td></tr><tr><td><code>far_pelvic_bal_m_</code></td><td>float</td><td>골반 균형도(골반 기울기). degree 단위.</td></tr><tr><td><code>far_pelvic_bal_grade</code></td><td>int</td><td><p>골반 균형도(골반 기울기).<br>-2 : 왼쪽 기울어짐 위험(value&#x3C;=-4) </p><p>-1 : 왼쪽 기울어짐 주의(-4&#x3C;value&#x3C;=-1) </p><p>0 : 정상(-1&#x3C;value&#x3C;1) </p><p>1 : 오른쪽 기울어짐 주의(1&#x3C;=value&#x3C;4) </p><p>2 : 오른쪽 기울어짐 위험(value>=4)</p></td></tr><tr><td><code>far_shoulder_bal_m_</code></td><td>float</td><td>어깨 균형도(어깨 기울기). degree 단위.</td></tr><tr><td><code>far_shoulder_bal_grade</code></td><td>int</td><td><p>어깨 균형도(어깨 기울기). <br>-2 : 왼쪽 기울어짐 위험(value&#x3C;=-4) </p><p>-1 : 왼쪽 기울어짐 주의(-4&#x3C;value&#x3C;=-1) </p><p>0 : 정상(-1&#x3C;value&#x3C;1) </p><p>1 : 오른쪽 기울어짐 주의(1&#x3C;=value&#x3C;4) </p><p>2 : 오른쪽 기울어짐 위험(value>=4)</p></td></tr><tr><td><code>far_left_qang_m_</code></td><td>float</td><td>왼쪽 오다리 값. degree 단위.</td></tr><tr><td><code>far_left_qang_grade</code></td><td>int</td><td><p>왼쪽 오다리 값 평가. <br>-2 : X다리 위험(value&#x3C;=-12) </p><p>-1 : X다리 주의(-12&#x3C;value&#x3C;=-6) </p><p>0 : 정상(-6&#x3C;value&#x3C;6) </p><p>1 : O다리 주의(6&#x3C;=value&#x3C;12) </p><p>2 : O다리 위험(value>=12)</p></td></tr><tr><td><code>far_right_qang_m_</code></td><td>float</td><td>오른쪽 오다리 값. degree 단위.</td></tr><tr><td><code>far_right_qang_grade</code></td><td>int</td><td><p>오른쪽 오다리 값 평가. <br>-2 : X다리 위험(value&#x3C;=-12) </p><p>-1 : X다리 주의(-12&#x3C;value&#x3C;=-6) </p><p>0 : 정상(-6&#x3C;value&#x3C;6) </p><p>1 : O다리 주의(6&#x3C;=value&#x3C;12) </p><p>2 : O다리 위험(value>=12)</p></td></tr><tr><td><code>far_knee_bal_m_</code></td><td>float</td><td>무릎 균형도(무릎 기울기). degree 단위.</td></tr><tr><td><code>far_knee_bal_grade</code></td><td>int</td><td><p>무릎 균형도(무릎 기울기) 평가. <br>-2 : 왼쪽 기울어짐 위험(value&#x3C;=-4) </p><p>-1 : 왼쪽 기울어짐 주의(-4&#x3C;value&#x3C;=-1) </p><p>0 : 정상(-1&#x3C;value&#x3C;1) </p><p>1 : 오른쪽 기울어짐 주의(1&#x3C;=value&#x3C;4) </p><p>2 : 오른쪽 기울어짐 위험(value>=4)</p></td></tr><tr><td><code>far_tilt_m_</code></td><td>float</td><td>정면 축 기울기(좌우 기울기). degree 단위.</td></tr><tr><td><code>far_tilt_grade</code></td><td>int</td><td><p>정면 축 기울기(좌우 기울기) 평가. <br>-2 : 왼쪽 기울어짐 위험(value&#x3C;=-4) </p><p>-1 : 왼쪽 기울어짐 주의(-4&#x3C;value&#x3C;=-1) </p><p>0 : 정상(-1&#x3C;value&#x3C;1) </p><p>1 : 오른쪽 기울어짐 주의(1&#x3C;=value&#x3C;4) </p><p>2 : 오른쪽 기울어짐 위험(value>=4)</p></td></tr><tr><td><code>turtle_neck_m_</code></td><td>float</td><td>거북목 기울기. degree 단위.</td></tr><tr><td><code>turtle_neck_grade</code></td><td>int</td><td>거북목 기울기 평가. <br>0 : 정상(value&#x3C;=34) <br>1 : 주의(34&#x3C;value&#x3C;40) <br>2 : 위험(value>=40)</td></tr><tr><td><code>round_shoulder_m_</code></td><td>float</td><td>굽은 어께 기울기. degree 단위.</td></tr><tr><td><code>round_shoulder_grade</code></td><td>int</td><td>굽은 어께 기울기 평가. <br>0 : 정상(value&#x3C;=8) <br>1 : 주의(8&#x3C;value&#x3C;15) <br>2 : 위험(value>=15)</td></tr><tr><td><code>sar_tilt_m_</code></td><td>float</td><td>측면 기울기(앞뒤 기울기). degree 단위.</td></tr><tr><td><code>sar_tilt_grade</code></td><td>int</td><td><p>측면 기울기(앞뒤 기울기) 평가. <br>-2 : 왼쪽 기울어짐 위험(value&#x3C;=-4) </p><p>-1 : 왼쪽 기울어짐 주의(-4&#x3C;value&#x3C;=-1) </p><p>0 : 정상(-1&#x3C;value&#x3C;1) </p><p>1 : 오른쪽 기울어짐 주의(1&#x3C;=value&#x3C;4) </p><p>2 : 오른쪽 기울어짐 위험(value>=4)</p></td></tr><tr><td><code>sar_head_tilt_m_</code></td><td>float</td><td>측면 머리 균형도(측면 머리 기울기). degree 단위.</td></tr><tr><td><code>sar_head_tilt_grade</code></td><td>int</td><td><p>측면 머리 균형도(측면 머리 기울기) 평가. <br>-2 : 왼쪽 기울어짐 위험(value&#x3C;=-4) </p><p>-1 : 왼쪽 기울어짐 주의(-4&#x3C;value&#x3C;=-1) </p><p>0 : 정상(-1&#x3C;value&#x3C;1) </p><p>1 : 오른쪽 기울어짐 주의(1&#x3C;=value&#x3C;4) </p><p>2 : 오른쪽 기울어짐 위험(value>=4)</p></td></tr></tbody></table>
 
 **요청 예시**
 
@@ -113,23 +113,38 @@ fetch("http://api.remo.re.kr/api/analysis-skeleton", {
 {% tab title="200" %}
 ```json
 {
-  "state": 0,
-  "forigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)(이미지를 바이트로 변환한 결과)",
-  "sorigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)(이미지를 바이트로 변환한 결과)",
-  "far_coords": "[[1152, 1085], [1162, 1371], [1015, 1418], [820, 1666], [682, 1871], [1308, 1426], [1523, 1683], [1672, 1894], [1019, 1888], [989, 2376], [981, 2710], [1264, 1899], [1263, 2386], [1255, 2718], [1138, 1894], [1151, 1649], [1160, 1274], [1236, 1211], [1192, 1156], [1156, 1193], [1077, 1215], [1118, 1159]]",
-  "side_part": 170.0999755859375,
-  "sar_coords": "[[1200, 1111], [1182, 1388], [1179, 1436], [1174, 1680], [1130, 1867], [1197, 1437], [1195, 1719], [1167, 1970], [1163, 1885], [1165, 2342], [1203, 2664], [1179, 1916], [1184, 2419], [1228, 2787], [1157, 1899], [1195, 1664], [1170, 1293], [1176, 1232], [1083, 1188], [1041, 1226], [1171, 1243], [1082, 1192]]",
-  "far_head_bal_m_": 2721,  
-  "far_pelvic_bal_m_": 113,
-  "far_shoulder_bal_m_": 1,
-  "far_left_qang_m_": 1701,
-  "far_right_qang_m_": 502,
-  "far_knee_bal_m_": -485,
-  "far_tilt_m_": -869,
-  "turtle_neck_m_": 30160,
-  "round_shoulder_m_": 2302,
-  "sar_tilt_m_": -1464,
-  "sar_head_tilt_m_": -1548
+   "state":True,
+   "APIName":"Analysis_skeleton",
+   "credit_change":-1,
+   "credit":15940,
+   "uuid":"your_task_uuid",
+   "forigimg":"data:image/jpeg;base64,/9j/4A ... (중략) ... A8x//2Q==",
+   "sorigimg":"data:image/jpeg;base64,/9j/4A ... (중략) ... A8x//2Q==",
+   "far_coords":"[[431, 258], [432, 403], [360, 432], [301, 595], [246, 720], [505, 434], [566, 598], [621, 723], [370, 675], [387, 953], [392, 1151], [499, 674], [485, 951], [473, 1152], [435, 676], [432, 545], [432, 356], [472, 328], [452, 304], [433, 329], [391, 328], [413, 308]]",
+   "side_part":-100.0,
+   "sar_coords":"[[424, 210], [418, 365], [419, 382], [435, 527], [437, 659], [423, 406], [434, 550], [448, 649], [435, 651], [437, 952], [395, 1174], [439, 650], [431, 931], [398, 1143], [445, 647], [425, 517], [426, 314], [433, 293], [485, 275], [503, 293], [430, 274], [484, 266]]",
+   "far_head_bal_m_":1.393,
+   "far_pelvic_bal_m_":1.153,
+   "far_shoulder_bal_m_":0.483,
+   "far_left_qang_m_":-2.529,
+   "far_right_qang_m_":-4.368,
+   "far_knee_bal_m_":0.57,
+   "far_tilt_m_":0.958,
+   "turtle_neck_m_":29.711,
+   "round_shoulder_m_":2.698,
+   "sar_tilt_m_":-1.681,
+   "sar_head_tilt_m_":-1.478,
+   "far_head_bal_grade":1,
+   "far_knee_bal_grade":0,
+   "far_left_qang_grade":0,
+   "far_pelvic_bal_grade":1,
+   "far_right_qang_grade":0,
+   "far_shoulder_bal_grade":0,
+   "far_tilt_grade":0,
+   "round_shoulder_grade":0,
+   "sar_head_tilt_grade":-1,
+   "sar_tilt_grade":-1,
+   "turtle_neck_grade":0
 }
 ```
 {% endtab %}
@@ -159,9 +174,7 @@ fetch("http://api.remo.re.kr/api/analysis-skeleton", {
 {% endtab %}
 {% endtabs %}
 
-
-
-요청 이미치 결과 보기
+**요청 이미지 결과 보기**
 
 {% tabs %}
 {% tab title="Python" %}
@@ -206,7 +219,7 @@ cv2.destroyAllWindows()
 {% endtab %}
 {% endtabs %}
 
-결과 이미지
+**결과 이미지**
 
 <figure><img src="../.gitbook/assets/forig.jpg" alt="" width="375"><figcaption><p>fronigimg</p></figcaption></figure>
 
