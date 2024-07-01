@@ -4,7 +4,7 @@ description: 이미지에 있는 측정 대상의 골격(skeleton)을 분석하�
 
 # 이미지 골격 분석 요청
 
-### ㅊ이미지 골격 분석 요청
+### 이미지 골격 분석 요청
 
 <mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-skeleton`
 
