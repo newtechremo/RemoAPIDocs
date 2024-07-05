@@ -12,18 +12,17 @@ description: 비디오를 입력 받아 사용자의 보행을 분석하는 API�
 
 **파라미터(json)**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>base64_video</code></td><td>string(base64 encoded)</td><td>base64로 인코딩 된 보행 비디오 문자열</td><td>true</td></tr><tr><td><code>id</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>uuid</code></td><td>string</td><td>영상 uuid</td><td>true</td></tr><tr><td><code>height</code></td><td>string</td><td>분석 대상의 키</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>base64_video</code></td><td>string(base64 encoded)</td><td>base64로 인코딩 된 보행 비디오 문자열</td><td>true</td></tr><tr><td><code>id</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>height</code></td><td>string</td><td>분석 대상의 키</td><td>true</td></tr></tbody></table>
 
 **응답(json)**
 
-<table><thead><tr><th width="144">Name</th><th width="88">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>state</code></td><td>int</td><td>성공 시 1, 실패 시 0</td></tr><tr><td><code>message</code></td><td>string</td><td>성공 또는 실패 관련 안내 메세지</td></tr><tr><td><code>uuid</code></td><td>string</td><td>파라미터로 전달 받은 uuid</td></tr><tr><td><code>wait_time</code></td><td>int</td><td>응답 후 결과 생성까지 대기 시간</td></tr></tbody></table>
+<table><thead><tr><th width="144">Name</th><th width="88">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>state</code></td><td>int</td><td>성공 시 1, 실패 시 0</td></tr><tr><td><code>message</code></td><td>string</td><td>성공 또는 실패 관련 안내 메세지</td></tr><tr><td><code>uuid</code></td><td>string</td><td>영상 uuid</td></tr><tr><td><code>wait_time</code></td><td>int</td><td>응답 후 결과 생성까지 대기 시간</td></tr></tbody></table>
 
 **요청 예시**
 
 <pre class="language-json"><code class="lang-json">{
 <strong>    “base64_video”: “AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAK/7BtZGF0AAACugYF … (이하 생략)”,
 </strong>    “id”: “example@example.com”,
-    “uuid”: "d4147f2c-b5cc-4289-9325-94dbbef26d67"
     “height”: “170”
 }
 </code></pre>

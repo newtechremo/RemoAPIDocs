@@ -12,7 +12,7 @@ description: 이미지에 있는 측정 대상의 체형과 신체 치수를 분
 
 **파라미터(json)**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>Email</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>UserKey</code></td><td>string</td><td>발급 받은 유저 키 값</td><td>true</td></tr><tr><td><code>APIKey</code></td><td>string</td><td>발급 받은 API 키 값</td><td>true</td></tr><tr><td><code>uuid</code></td><td>string</td><td>task uuid</td><td>true</td></tr><tr><td><code>forigimg</code></td><td>string(base64)</td><td>base64로 인코딩 된 정면 사진</td><td>true</td></tr><tr><td><code>sorigimg</code></td><td>string(base64)</td><td>base64로 인코딩 된 측면 사진</td><td>true</td></tr><tr><td><code>gender</code></td><td>int</td><td>성별(남자:1, 여자:2)</td><td>true</td></tr><tr><td><code>height_mm</code></td><td>int</td><td>분석 대상의 키(mm 단위)</td><td>true</td></tr><tr><td><code>weight_g</code></td><td>int</td><td>분석 대상의 몸무게(g 단위)</td><td>true</td></tr><tr><td><code>age</code></td><td>int</td><td>분석 대상의 나이</td><td>true</td></tr><tr><td><code>birthday</code></td><td>string</td><td>분석 대상의 생년월일 8글자</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>Email</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>UserKey</code></td><td>string</td><td>발급 받은 유저 키 값</td><td>true</td></tr><tr><td><code>APIKey</code></td><td>string</td><td>발급 받은 API 키 값</td><td>true</td></tr><tr><td><code>forigimg</code></td><td>string(base64)</td><td>base64로 인코딩 된 정면 사진</td><td>true</td></tr><tr><td><code>sorigimg</code></td><td>string(base64)</td><td>base64로 인코딩 된 측면 사진</td><td>true</td></tr><tr><td><code>gender</code></td><td>int</td><td>성별(남자:1, 여자:2)</td><td>true</td></tr><tr><td><code>height_mm</code></td><td>int</td><td>분석 대상의 키(mm 단위)</td><td>true</td></tr><tr><td><code>weight_g</code></td><td>int</td><td>분석 대상의 몸무게(g 단위)</td><td>true</td></tr><tr><td><code>age</code></td><td>int</td><td>분석 대상의 나이</td><td>true</td></tr><tr><td><code>birthday</code></td><td>string</td><td>분석 대상의 생년월일 8글자</td><td>true</td></tr></tbody></table>
 
 **응답(json)**
 
@@ -25,7 +25,6 @@ description: 이미지에 있는 측정 대상의 체형과 신체 치수를 분
   "Email": “your_email”,
   "UserKey": “your_user_key”,
   "APIKey": “your_api_key”,
-  "uuid": “55f75582-2c4d-4bd9-9e03-9b75f7bc3058”,
   "forigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)(이미지를 바이트로 변환한 결과)",
   "sorigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)(이미지를 바이트로 변환한 결과)"
   "gender": 2,
@@ -47,7 +46,6 @@ curl -X POST "http://api.remo.re.kr/api/analysis-shape" \
     "Email": "your_email",
     "UserKey": "your_user_key",
     "APIKey": "your_api_key",
-    "uuid": "'$(uuidgen)'",
     "forigimg": "'$(base64 -w 0 path/to/your/front/image)'",
     "sorigimg": "'$(base64 -w 0 path/to/your/side/image)'",
     "gender": 2,
@@ -74,7 +72,7 @@ with open(simg_path, "rb") as img_file:
     simg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
 
 task_uuid = str(uuid.uuid4())
-rq_dict = {'Email': "your_email", "UserKey": "your_user_key", "APIKey": "your_api_key", 'uuid': task_uuid, "forigimg": fimg_b64, "sorigimg": simg_b64, "gender": 2, "height_mm": 1650, "weight_g": 65000, "age": 15, "birthday": "20101010"}
+rq_dict = {'Email': "your_email", "UserKey": "your_user_key", "APIKey": "your_api_key", "forigimg": fimg_b64, "sorigimg": simg_b64, "gender": 2, "height_mm": 1650, "weight_g": 65000, "age": 15, "birthday": "20101010"}
 
 res = requests.post("http://api.remo.re.kr/api/analysis-shape", json=rq_dict)
 ```
@@ -97,7 +95,6 @@ const rq_dict = {
   Email: "your_email",
   UserKey: "your_user_key",
   APIKey: "your_api_key",
-  uuid: task_uuid,
   forigimg: fimg_b64,
   sorigimg: simg_b64,
   gender: 2,

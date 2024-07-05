@@ -12,7 +12,7 @@ description: 이미지에 있는 측정 대상의 골격(skeleton)을 분석하�
 
 **파라미터(json)**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>Email</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>UserKey</code></td><td>string</td><td>발급 받은 유저 키 값</td><td>true</td></tr><tr><td><code>APIKey</code></td><td>string</td><td>발급 받은 API 키 값</td><td>true</td></tr><tr><td><code>uuid</code></td><td>string</td><td>task uuid</td><td>true</td></tr><tr><td><code>forigimg</code></td><td>string(base64)</td><td>base64로 인코딩 된 정면 사진</td><td>true</td></tr><tr><td><code>sorigimg</code></td><td>string(base64)</td><td>base64로 인코딩 된 측면 사진</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>Email</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>UserKey</code></td><td>string</td><td>발급 받은 유저 키 값</td><td>true</td></tr><tr><td><code>APIKey</code></td><td>string</td><td>발급 받은 API 키 값</td><td>true</td></tr><tr><td><code>forigimg</code></td><td>string(base64)</td><td>base64로 인코딩 된 정면 사진</td><td>true</td></tr><tr><td><code>sorigimg</code></td><td>string(base64)</td><td>base64로 인코딩 된 측면 사진</td><td>true</td></tr></tbody></table>
 
 **응답(json)**
 
@@ -25,7 +25,6 @@ description: 이미지에 있는 측정 대상의 골격(skeleton)을 분석하�
   "Email": “example@email.com”,
   "UserKey": “userkey”,
   "APIKey": “apikey”,
-  "uuid": “55f75582-2c4d-4bd9-9e03-9b75f7bc3058”,
   "forigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)(이미지를 바이트로 변환한 결과)",
   "sorigimg": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBw ... (생략)(이미지를 바이트로 변환한 결과)"
  }
@@ -42,7 +41,6 @@ curl -X POST "http://api.remo.re.kr/api/analysis-skeleton" \
     "Email": "your_email",
     "UserKey": "your_user_key",
     "APIKey": "your_api_key",
-    "uuid": "'$(uuidgen)'",
     "forigimg": "'$(base64 -w 0 path/to/your/front/image)'",
     "sorigimg": "'$(base64 -w 0 path/to/your/side/image)'"
 }'
@@ -64,7 +62,7 @@ with open(simg_path, "rb") as img_file:
     simg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
 
 task_uuid = str(uuid.uuid4())
-rq_dict = {'Email': "your_email", "UserKey": "your_user_key", "APIKey": "your_api_key", 'uuid': task_uuid, "forigimg": fimg_b64, "sorigimg": simg_b64}
+rq_dict = {'Email': "your_email", "UserKey": "your_user_key", "APIKey": "your_api_key", "forigimg": fimg_b64, "sorigimg": simg_b64}
 
 res = requests.post("http://api.remo.re.kr/api/analysis-skeleton", json=rq_dict)
 ```
@@ -87,7 +85,6 @@ const rq_dict = {
   Email: "your_email",
   UserKey: "your_user_key",
   APIKey: "your_api_key",
-  uuid: task_uuid,
   forigimg: fimg_b64,
   sorigimg: simg_b64
 };
