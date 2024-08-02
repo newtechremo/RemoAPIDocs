@@ -16,7 +16,7 @@ description: 이미지에 있는 측정 대상의 체형과 신체 치수를 분
 
 **응답(json)**
 
-<table><thead><tr><th width="167">Name</th><th width="88">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>data</code></td><td>dict</td><td>결과 dictionary</td></tr><tr><td><code>state</code></td><td>int</td><td>성공 시 0, 실패 시 -1</td></tr><tr><td><code>errors</code></td><td>string</td><td>에러가 발생한 경우 에러메세지 전달</td></tr><tr><td><code>message</code></td><td>string</td><td>처리 관련 안내 메시지</td></tr><tr><td><code>shape_class</code></td><td>int</td><td>0: 사각형, 1: 둥근형, 2: 삼각형, 3: 역삼각형, 4: 모래시계형</td></tr><tr><td><code>shape_size</code></td><td>int</td><td>0 ~ 4까지 값으로 구성. 0 매우 마름, 1: 마름, 2:표준, 3: 과체중, 4: 비만</td></tr><tr><td><code>chest</code></td><td>int</td><td>mm 단위, 가슴 둘레</td></tr><tr><td><code>chest_max</code></td><td>int</td><td>mm 단위, 가슴 최대 둘레</td></tr><tr><td><code>chest_min</code></td><td>int</td><td>mm 단위, 가슴 최소 둘레</td></tr><tr><td><code>chest_per</code></td><td>int</td><td>% 단위</td></tr><tr><td><code>height_per</code></td><td>int</td><td>% 단위</td></tr><tr><td><code>hip</code></td><td>int</td><td>mm 단위, 엉덩이 둘레</td></tr><tr><td><code>hip_max</code></td><td>int</td><td>mm 단위, 엉덩이 최대 둘레</td></tr><tr><td><code>hip_min</code></td><td>int</td><td>mm 단위, 엉덩이 최소 둘레</td></tr></tbody></table>
+<table><thead><tr><th width="167">Name</th><th width="88">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>state</code></td><td>bool</td><td>분석성공 시 True, 실패 시 False</td></tr><tr><td><code>statue_code</code></td><td>int</td><td>분석  성공 시 200, 실패 시 에러 코드 값 참조</td></tr><tr><td><code>credit_change</code></td><td>int</td><td>분석 성공 시 사용된 크리딧 수량, 실패 시 0</td></tr><tr><td><code>message</code></td><td>string</td><td>요청관련 안내 메시지</td></tr><tr><td><code>shape_class</code></td><td>int</td><td>0: 사각형, 1: 둥근형, 2: 삼각형, 3: 역삼각형, 4: 모래시계형</td></tr><tr><td><code>shape_size</code></td><td>int</td><td>0 ~ 4까지 값으로 구성. 0 매우 마름, 1: 마름, 2:표준, 3: 과체중, 4: 비만</td></tr><tr><td><code>BMI</code></td><td>float</td><td>사용자의 체질양 지수 값을 나타냄</td></tr><tr><td><code>WHR</code></td><td>float</td><td>사용자의 허리둘레와 엉덩이 둘레 비율</td></tr><tr><td><code>height_per</code></td><td>int</td><td>신장의 표준 분포 비율을 나타냄, 중위값은 50(단위%)</td></tr><tr><td><code>weight_per</code></td><td>int</td><td>몸무게의 표준 분포 비율을 나타냄, 중위값은 50(단위%)</td></tr><tr><td><code>chest</code></td><td>float</td><td>가슴둘레 예측 평균 값(단위 mm)</td></tr><tr><td><code>chest_max</code></td><td>float</td><td>가슴둘레 예측 최대 값(단위 mm)</td></tr><tr><td><code>chest_min</code></td><td>float</td><td>가슴둘레 예측 최소 값(단위 mm)</td></tr><tr><td><code>chest_per</code></td><td>int</td><td>가슴 둘레의 표준 분포 비율을 나타냄, 중위값은 50(단위%)</td></tr><tr><td><code>hip</code></td><td>float</td><td>엉덩이 둘레 예측 평균 값(단위 mm)</td></tr><tr><td><code>hip_max</code></td><td>float</td><td>엉덩이 둘레 예측 최대 값(단위 mm)</td></tr><tr><td><code>hip_min</code></td><td>float</td><td>엉덩이 둘레 예측 최소 값(단위 mm)</td></tr><tr><td><code>hip_per</code></td><td>int</td><td>엉덩이 둘레의 표준 분포 비율을 나타냄, 중위값은 50(단위%)</td></tr><tr><td><code>waist</code></td><td>float</td><td>허리 둘레 예측 평균 값(단위 mm)</td></tr><tr><td><code>waist_max</code></td><td>float</td><td>허리 둘레 예측 최대 값(단위 mm)</td></tr><tr><td><code>waist_min</code></td><td>float</td><td>허리 둘레 예측 최소 값(단위 mm)</td></tr><tr><td><code>waist_per</code></td><td>int</td><td>허리 둘레의 표준 분포 비율을 나타냄, 중위값은 50(단위%)</td></tr><tr><td><code>thigh</code></td><td>float</td><td>허벅지 둘레 예측 평균 값(단위 mm)</td></tr><tr><td><code>thigh_max</code></td><td>float</td><td>허벅지 둘레 예측 최대 값(단위 mm)</td></tr><tr><td><code>thigh_min</code></td><td>float</td><td>허벅지 둘레 예측 최소 값(단위 mm)</td></tr><tr><td><code>thigh_per</code></td><td>int</td><td>허벅지 둘레의 표준 분포 비율을 나타냄, 중위값은 50(단위%)</td></tr><tr><td><code>arm_length</code></td><td>float</td><td>팔의 평균 측정 길이(단위 mm)</td></tr><tr><td><code>arm_per</code></td><td>int</td><td>팔의 측정 길이 표준 평차(단위 %)</td></tr><tr><td><code>leg_length</code></td><td>float</td><td>다리의 평균 측정 길이(단위 mm)</td></tr><tr><td><code>leg_per</code></td><td>int</td><td>다리의 측정 길이 표준 평차(단위 %)</td></tr><tr><td><code>head_length</code></td><td>float</td><td>머리의 높이 측정 값(단위 mm)</td></tr><tr><td><code>trunk_length</code></td><td>float</td><td>머리 아래 상반신의 길이 측정 값(단위 mm)</td></tr><tr><td>lower_body_length</td><td>float</td><td>발목 위 하반신의 길이 측정 값(단위 mm)</td></tr><tr><td>left_arm_length</td><td>float</td><td>왼쪽 팔의 길이 측정 값(mm)</td></tr><tr><td>left_up_arm_length</td><td>float</td><td>왼쪽 팔 상완의 길이 측정 값(mm)</td></tr><tr><td>left_down_arm_length</td><td>float</td><td>왼쪽 팔 하완의 길이 측정 값(mm)</td></tr><tr><td>right_arm_length</td><td>float</td><td>오른쪽 팔의 길이 측정 값(mm)</td></tr><tr><td>right_up_arm_length</td><td>float</td><td>오른쪽 팔 상완의 길이 측정 값(mm)</td></tr><tr><td>right_down_arm_length</td><td>float</td><td>오른쪽 팔 하완의 길이 측정 값(mm)</td></tr><tr><td>left_down_leg_length</td><td>float</td><td>왼쪽 다리의 길이 측정 값(mm)</td></tr><tr><td>left_up_leg_length</td><td>float</td><td>왼쪽 다리 허벅지의 길이 측정 값(mm)</td></tr><tr><td>left_down_leg_length</td><td>float</td><td>왼쪽 다리 종아리의 길이 측정 값(mm)</td></tr><tr><td>right_leg_length</td><td>float</td><td>오른쪽 다리의 길이 측정 값(mm)</td></tr><tr><td>right_up_leg_length</td><td>float</td><td>오른쪽 다리 허벅지의 길이 측정 값(mm)</td></tr><tr><td>right_down_leg_length</td><td>float</td><td>오른쪽 다리 종아리의 길이 측정 값(mm)</td></tr></tbody></table>
 
 **요청 예시**
 
@@ -125,70 +125,79 @@ fetch("http://api.remo.re.kr/api/analysis-shape", {
 {% tab title="200" %}
 ```json
 {
-  "data": {
-    "chest": 894,
-    "chest_max": 897,
-    "chest_min": 856,
-    "chest_per": 23,
-    "height_per": 99,
-    "hip": 931,
-    "hip_max": 943,
-    "hip_min": 848,
-    "hip_per": 54,
-    "message": "processing done",
-    "shape_class": 0,
-    "state": 0,
-    "thigh": 526,
-    "thigh_max": 531,
-    "thigh_min": 434,
-    "thigh_per": 87,
-    "waist": 730,
-    "waist_max": 746,
-    "waist_min": 722,
-    "waist_per": 2,
-    "weight_per": 78,
-    “left_up_arm_length”: 18.948232737856337,
-    “right_up_arm_length”: 17.85270382242535,
-    “left_down_arm_length”: 18.1537781560452,
-    “right_down_arm_length”: 17.529966293677035,
-    “left_arm_length”: 37.102010893901536,
-    “right_arm_length”: 35.38267011610238,
-   “left_up_leg_length”: 26.49846457688673,
-   “right_up_leg_length”: 25.853059057438635,
-   “left_down_leg_length”: 32.56943512408277,
-   “right_down_leg_length”: 28.074971378799322,
-   “left_leg_length”: 59.067899700969505,
-   “right_leg_length”: 53.928030436237954,
-   “lower_body_length”: 45.217383771616056,
-   “trunk_length”: 31.456454492717803,
-   “head_length”: 21.271475328601596,
-   “body_length”: 99.99999999999999
-  }
-}
-
-```
-{% endtab %}
-
-{% tab title="400" %}
-```json
-{
-  "data":
-  {
-  "state": -1,
-  'errors': "image load error" 
-  }
+  'state': True, 
+  'status_code': 200, 
+  'APIName': 'Analysis-shape', 
+  'credit_change': -1, 
+  'credit': 99, 
+  'uuid': '3b255cb1-ba71-4264-a52a-3bee7fe5b5c9', 
+  'BMI': 238.751, 
+  'WHR': 0.809, 
+  'arm_length': 527.7, 
+  'arm_per': 100, 
+  'body_length': 1650.0, 
+  'chest': 857.1, 
+  'chest_max': 859.3, 
+  'chest_min': 829.3, 
+  'chest_per': 100, 
+  'head_length': 265.8, 
+  'height_per': 100, 
+  'hip': 870.1, 
+  'hip_max': 877.4, 
+  'hip_min': 819.2, 
+  'hip_per': 100, 
+  'left_arm_length': 530.7, 
+  'left_down_arm_length': 251.1, 
+  'left_down_leg_length': 407.3, 
+  'left_leg_length': 792.0, 
+  'left_up_arm_length': 279.6, 
+  'left_up_leg_length': 384.7, 
+  'leg_length': 790.1, 
+  'leg_per': 100, 
+  'lower_body_length': 887.0, 
+  'right_arm_length': 524.7, 
+  'right_down_arm_length': 248.6, 
+  'right_down_leg_length': 405.5, 
+  'right_leg_length': 788.1, 
+  'right_up_arm_length': 276.1, 
+  'right_up_leg_length': 382.6, 
+  'shape_class': 0, 
+  'shape_size': 2, 
+  'thigh': 478.1, 
+  'thigh_max': 482.3, 
+  'thigh_min': 397.1, 
+  'thigh_per': 100, 
+  'trunk_length': 466.8, 
+  'waist': 704.2, 
+  'waist_max': 724.0, 
+  'waist_min': 694.9, 
+  'waist_per': 100, 
+  'weight_per': 100, 
+  'shape_data': {'BMI': 238.751, 'WHR': 0.809, 'arm_length': 527.7, 'arm_per': 100, 'body_length': 1650.0, 'chest': 857.1, 'chest_max': 859.3, 'chest_min': 829.3, 'chest_per': 100, 'head_length': 265.8, 'height_per': 100, 'hip': 870.1, 'hip_max': 877.4, 'hip_min': 819.2, 'hip_per': 100, 'left_arm_length': 530.7, 'left_down_arm_length': 251.1, 'left_down_leg_length': 407.3, 'left_leg_length': 792.0, 'left_up_arm_length': 279.6, 'left_up_leg_length': 384.7, 'leg_length': 790.1, 'leg_per': 100, 'lower_body_length': 887.0, 'right_arm_length': 524.7, 'right_down_arm_length': 248.6, 'right_down_leg_length': 405.5, 'right_leg_length': 788.1, 'right_up_arm_length': 276.1, 'right_up_leg_length': 382.6, 'shape_class': 0, 'shape_size': 2, 'thigh': 478.1, 'thigh_max': 482.3, 'thigh_min': 397.1, 'thigh_per': 100, 'trunk_length': 466.8, 'waist': 704.2, 'waist_max': 724.0, 'waist_min': 694.9, 'waist_per': 100, 'weight_per': 100}, 'message': 'success'}
 }
 ```
 {% endtab %}
 
-{% tab title="400" %}
+{% tab title="400~" %}
 ```json
 {
-  "data":
-  {
-  "state": -1,
-  'message': "processing error" 
-  }
+    'state': False, 
+    'status_code': 413, 
+    'credit_change': 0, 
+    'credit': 100, 
+    'message': 'error from front image decoding b64'
+}
+```
+{% endtab %}
+
+{% tab title="500~" %}
+```json
+{
+    'state': False, 
+    'status_code': 515, 
+    'credit_change': 0, 
+    'credit': 100, 
+    'message': 'In the side image, the model is not facing side '
 }
 ```
 {% endtab %}
