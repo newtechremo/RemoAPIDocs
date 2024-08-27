@@ -14,3 +14,7 @@
   * [이미지 골격 분석 요청](skeleton-analysis/analysis-request.md)
 * [미래 체형 API](future-shape-analysis/README.md)
   * [이미지 미래 체형 생성 요청](future-shape-analysis/generate-request.md)
+
+## 업데이트 <a href="#update" id="update"></a>
+
+* [1.0.0](update/1.0.0.md)
