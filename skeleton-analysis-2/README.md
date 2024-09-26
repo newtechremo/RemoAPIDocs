@@ -2,6 +2,6 @@
 description: 소개 글
 ---
 
-# 골프 분석 API
+# 축구 분석 API
 
 ###
