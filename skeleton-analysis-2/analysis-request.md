@@ -6,7 +6,7 @@ description: 비디오를 입력 받아 사용자의 축구 자세를 분석하�
 
 ### 축구 비디오 분석 요청
 
-<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-soccer`
+<mark style="color:green;">`POST`</mark> `http://115.94.164.253:15003/soccer/analysis-await`
 
 축구비디오를 입력 받아 사용자의 자세를 분석합니다.
 
@@ -104,4 +104,3 @@ res = requests.post("http://api.remo.re.kr/api/analysis-golf", json=rq_dict)
 |              | 크리딧 부족        | 422 |
 | 프로세스 에러      | 프로세스 처리 에러    | 550 |
 |              | 프로세스 처리 기타 에러 | 559 |
-

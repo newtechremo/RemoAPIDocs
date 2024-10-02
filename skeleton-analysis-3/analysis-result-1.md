@@ -6,7 +6,7 @@ description: 완료된 달리기 분석 결과를 요청하는 API입니다.
 
 ## 달리기분석 점수요청
 
-<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-running-score`
+<mark style="color:red;">`GET`</mark> `http://115.94.164.253:15003/running/get-score/{id}/{uuid}`
 
 사용자 id(이메일), 분석된 비디오 uuid를 파라미터로 받아 달리기분석 점수 값을 리턴합니다.
 
@@ -23,7 +23,7 @@ description: 완료된 달리기 분석 결과를 요청하는 API입니다.
 **요청 예시**
 
 ```json
-/analysis-golf-score/example@email.com/bc692864-0243-4d41-bce3-7658c92ef0c5
+http://115.94.164.253:15003/running/get-score/example@email.com/bc692864-0243-4d41-bce3-7658c92ef0c5
 ```
 
 **응답 예시**

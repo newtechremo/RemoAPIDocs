@@ -6,7 +6,7 @@ description: 완료된 축구 분석 결과를 요청하는 API입니다.
 
 ## 축구 분석 결과 요청
 
-<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-soccer-result`
+<mark style="color:red;">`GET`</mark> `http://115.94.164.253:15003/soccer/get-val/{id}/{uuid}`
 
 사용자 id(이메일), 분석된 비디오 uuid를 파라미터로 받아 축구 분석 결과 값을 리턴합니다.
 
@@ -21,7 +21,7 @@ description: 완료된 축구 분석 결과를 요청하는 API입니다.
 **요청 예시**
 
 ```json
-/analysis-soccer-result/example@email.com/bc692864-0243-4d41-bce3-7658c92ef0c5
+http://115.94.164.253:15003/soccer/get-result/example@email.com/bc692864-0243-4d41-bce3-7658c92ef0c5
 ```
 
 **응답 예시**

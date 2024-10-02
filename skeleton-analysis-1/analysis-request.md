@@ -4,9 +4,9 @@ description: 비디오를 입력 받아 사용자의 골프 자세를 분석하�
 
 # 골프 비디오 분석 요청
 
-### 골프 비디오  분석 요청
+### 골프 비디오 분석 요청
 
-<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-golf`
+<mark style="color:green;">`POST`</mark> `http://115.94.164.253:15003/golf/analysis-await`
 
 골프 비디오를 입력 받아 사용자의 자세를 분석합니다.
 
@@ -104,4 +104,3 @@ res = requests.post("http://api.remo.re.kr/api/analysis-golf", json=rq_dict)
 |              | 크리딧 부족        | 422 |
 | 프로세스 에러      | 프로세스 처리 에러    | 550 |
 |              | 프로세스 처리 기타 에러 | 559 |
-
