@@ -197,7 +197,7 @@ fetch("http://api.remo.re.kr/api/analysis-skeleton", {
 
 {% tabs %}
 {% tab title="Python" %}
-```
+```python
 import requests
 import uuid
 import base64
