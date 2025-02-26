@@ -6,7 +6,7 @@ description: 이미지에 있는 측정 대상의 골격(skeleton)을 분석하�
 
 ### 이미지 골격 분석 요청
 
-<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-skeleton`
+<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-skeleton-v2`
 
 정면   측면 사진을 입력 받아 신체 골격을 분석합니다.
 
@@ -38,7 +38,7 @@ description: 이미지에 있는 측정 대상의 골격(skeleton)을 분석하�
 {% tabs %}
 {% tab title="curl" %}
 ```bash
-curl -X POST "http://api.remo.re.kr/api/analysis-skeleton" \
+curl -X POST "http://api.remo.re.kr/api/analysis-skeleton-v2" \
 -H "Content-Type: application/json" \
 -d '{
     "Email": "your_email",
@@ -59,16 +59,19 @@ import base64
 
 fimg_path = "path/to/your/front/image"
 simg_path = "path/to/your/side/image"
+bimg_path = "path/to/your/back/image"
 
 with open(fimg_path, "rb") as img_file:
     fimg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
 with open(simg_path, "rb") as img_file:
     simg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
+with open(bimg_path, "rb") as img_file:
+    bimg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
 
 task_uuid = str(uuid.uuid4())
-rq_dict = {'Email': "your_email", "UserKey": "your_user_key", "APIKey": "your_api_key", "forigimg": fimg_b64, "sorigimg": simg_b64}
+rq_dict = {'Email': "your_email", "UserKey": "your_user_key", "APIKey": "your_api_key", "forigimg": fimg_b64, "sorigimg": simg_b64, "borigimg": bimg_b64}
 
-res = requests.post("http://api.remo.re.kr/api/analysis-skeleton", json=rq_dict)
+res = requests.post("http://api.remo.re.kr/api/analysis-skeleton-v2", json=rq_dict)
 ```
 {% endtab %}
 
@@ -80,9 +83,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 const fimg_path = "path/to/your/front/image";
 const simg_path = "path/to/your/side/image";
+const bimg_path = "path/to/your/back/image";
 
 const fimg_b64 = fs.readFileSync(fimg_path, { encoding: 'base64' });
 const simg_b64 = fs.readFileSync(simg_path, { encoding: 'base64' });
+const bimg_b64 = fs.readFileSync(bimg_path, { encoding: 'base64' });
 
 const task_uuid = uuidv4();
 const rq_dict = {
@@ -90,10 +95,11 @@ const rq_dict = {
   UserKey: "your_user_key",
   APIKey: "your_api_key",
   forigimg: fimg_b64,
-  sorigimg: simg_b64
+  sorigimg: simg_b64,
+  borigimg: bimg_b64,
 };
 
-fetch("http://api.remo.re.kr/api/analysis-skeleton", {
+fetch("http://api.remo.re.kr/api/analysis-skeleton-v2", {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
@@ -114,37 +120,54 @@ fetch("http://api.remo.re.kr/api/analysis-skeleton", {
 {% tab title="200" %}
 ```json
 {
-   "state":True,
-   "APIName":"Analysis_skeleton",
-   "credit_change":-1,
-   "credit":99,
-   "uuid":"your_task_uuid",
-   "forigimg":"data:image/jpeg;base64,/9j/4A ... (중략) ... A8x//2Q==",
-   "sorigimg":"data:image/jpeg;base64,/9j/4A ... (중략) ... A8x//2Q==",
-   "far_coords":"[[431, 258], [432, 403], [360, 432], [301, 595], [246, 720], [505, 434], [566, 598], [621, 723], [370, 675], [387, 953], [392, 1151], [499, 674], [485, 951], [473, 1152], [435, 676], [432, 545], [432, 356], [472, 328], [452, 304], [433, 329], [391, 328], [413, 308]]",
-   "sar_coords":"[[424, 210], [418, 365], [419, 382], [435, 527], [437, 659], [423, 406], [434, 550], [448, 649], [435, 651], [437, 952], [395, 1174], [439, 650], [431, 931], [398, 1143], [445, 647], [425, 517], [426, 314], [433, 293], [485, 275], [503, 293], [430, 274], [484, 266]]",
-   "far_head_bal_m_":1.393,
-   "far_pelvic_bal_m_":1.153,
-   "far_shoulder_bal_m_":0.483,
-   "far_left_qang_m_":-2.529,
-   "far_right_qang_m_":-4.368,
-   "far_knee_bal_m_":0.57,
-   "far_tilt_m_":0.958,
-   "turtle_neck_m_":29.711,
-   "round_shoulder_m_":2.698,
-   "sar_tilt_m_":-1.681,
-   "sar_head_tilt_m_":-1.478,
-   "far_head_bal_grade":1,
-   "far_knee_bal_grade":0,
-   "far_left_qang_grade":0,
-   "far_pelvic_bal_grade":1,
-   "far_right_qang_grade":0,
-   "far_shoulder_bal_grade":0,
-   "far_tilt_grade":0,
-   "round_shoulder_grade":0,
-   "sar_head_tilt_grade":-1,
-   "sar_tilt_grade":-1,
-   "turtle_neck_grade":0
+  'state': True,
+  'status_code': 200,
+  'APIName': 'Analysis-skeleton-v2',
+  'credit_change': -1,
+  'credit': 99984228,
+  'uuid': '59e9a3a1-a8d2-42a1-b2af-3a87cd01f682',
+  'forigimg': 'data:image/jpeg;base64,/9j/4A ... (중략) ... A8x//2Q==',
+  'sorigimg': 'data:image/jpeg;base64,/9j/4A ... (중략) ... A8x//2Q==',
+  'borigimg': 'data:image/jpeg;base64,/9j/4A ... (중략) ... A8x//2Q==',
+  'bar_coords': '[[1060, 816], [1053, 1079], [1199, 1134], [1417, 1340], [1609, 1465], [903, 1121], [661, 1301], [448, 1397], [1162, 1605], [1156, 2076], [1159, 2449], [899, 1595], [873, 2069], [861, 2438], [1028, 1586], [1042, 1358], [1054, 991], [983, 943], [1007, 937], [1034, 979], [1128, 950], [1075, 940]]',
+  'bar_head_bal_grade': 0,
+  'bar_head_bal_m_': -0.011,
+  'bar_knee_bal_grade': 0,
+  'bar_knee_bal_m_': -0.312,
+  'bar_left_qang_grade': 0,
+  'bar_left_qang_m_': 0.665,
+  'bar_pelvic_bal_grade': 0,
+  'bar_pelvic_bal_m_': 0.299,
+  'bar_right_qang_grade': 0,
+  'bar_right_qang_m_': 2.109,
+  'bar_shoulder_bal_grade': 0,
+  'bar_shoulder_bal_m_': 0.544,
+  'bar_tilt_grade': 0,
+  'bar_tilt_m_': -0.125,
+  'far_coords': '[[431, 258], [432, 403], [360, 432], [301, 595], [246, 720], [505, 434], [566, 598], [621, 723], [370, 675], [387, 953], [392, 1151], [499, 674], [485, 951], [473, 1152], [435, 676], [432, 545], [432, 356], [472, 328], [452, 304], [433, 329], [391, 328], [413, 308]]',
+  'far_head_bal_grade': 1,
+  'far_head_bal_m_': 1.393,
+  'far_knee_bal_grade': 0,
+  'far_knee_bal_m_': 0.57,
+  'far_left_qang_grade': 0,
+  'far_left_qang_m_': -2.529,
+  'far_pelvic_bal_grade': 1,
+  'far_pelvic_bal_m_': 1.153,
+  'far_right_qang_grade': 0,
+  'far_right_qang_m_': -4.368,
+  'far_shoulder_bal_grade': 0,
+  'far_shoulder_bal_m_': 0.483,
+  'far_tilt_grade': 0,
+  'far_tilt_m_': 0.958,
+  'round_shoulder_grade': 0,
+  'round_shoulder_m_': 2.698,
+  'sar_coords': '[[424, 210], [418, 365], [419, 382], [435, 527], [437, 659], [423, 406], [434, 550], [448, 649], [435, 651], [437, 952], [395, 1174], [439, 650], [431, 931], [398, 1143], [445, 647], [425, 517], [426, 314], [433, 293], [485, 275], [503, 293], [430, 274], [484, 266]]',
+  'sar_head_tilt_grade': -1,
+  'sar_head_tilt_m_': -2.227,
+  'sar_tilt_grade': 2,
+  'sar_tilt_m_': 6.37,
+  'turtle_neck_grade': 0,
+  'turtle_neck_m_': 29.711
 }
 ```
 {% endtab %}
@@ -174,26 +197,34 @@ fetch("http://api.remo.re.kr/api/analysis-skeleton", {
 
 **에러 코드 안내**
 
-| 대분류          | 소분류                   | 코드  |
-| ------------ | --------------------- | --- |
-| 입력 데이터 문제 발생 | 프로토콜 에러               | 400 |
-|              | 입력 데이터 없음             | 411 |
-|              | 첨부 이미지 에러             | 412 |
-|              | 첨부 이미지 에러(정면)         | 413 |
-|              | 첨부 이미지 에러(측면)         | 414 |
-|              | 사진이 10도 초과 기울어 있음(정면) | 418 |
-| 기타 이슈 발생     | 사용 유저 확인 안됨           | 420 |
-|              | APIKey 틀림             | 421 |
-|              | 크리딧 부족                | 422 |
-| 분석 이슈 발생     | 정면 사진 사람 인식 안됨        | 511 |
-|              | 측면 사진 사람 인식 안됨        | 512 |
-|              | 두개 사진 모두 사람 인식 안됨     | 513 |
-|              | 정면 사진의 각도 틀림          | 514 |
-|              | 측면 사진의 각도 틀림          | 515 |
-|              | 정면, 측면 사진의 각도 틀림      | 516 |
-|              | 정면 이미지의 A자 포즈 아님      | 517 |
-| 프로세스 에러      | 프로세스 처리 에러            | 550 |
-|              | 프로세스 처리 기타 에러         | 559 |
+| 대분류          | 소분류                    | 코드  |
+| ------------ | ---------------------- | --- |
+| 입력 데이터 문제 발생 | 프로토콜 에러                | 400 |
+|              | 입력 데이터 없음              | 411 |
+|              | 첨부 이미지 에러              | 412 |
+|              | 첨부 이미지 에러(정면)          | 413 |
+|              | 첨부 이미지 에러(측면)          | 414 |
+|              | 사진이 10도 초과 기울어 있음(정면)  | 418 |
+| 기타 이슈 발생     | 사용 유저 확인 안됨            | 420 |
+|              | APIKey 틀림              | 421 |
+|              | 크리딧 부족                 | 422 |
+| 분석 이슈 발생     | 정면 사진 사람 인식 안됨         | 511 |
+|              | 측면 사진 사람 인식 안됨         | 512 |
+|              | 정면, 측면 사진 사람 인식 안됨     | 513 |
+|              | 정면 사진의 각도 틀림           | 514 |
+|              | 측면 사진의 각도 틀림           | 515 |
+|              | 정면, 측면 사진의 각도 틀림       | 516 |
+|              | 정면 이미지의 A자 포즈 아님       | 517 |
+|              | 후면 사진 사람 인식 안됨         | 518 |
+|              | 정면, 후면 사진 사람 인식 안됨     | 519 |
+|              | 측면, 후면 사진 사람 인식 안됨     | 520 |
+|              | 정면, 측면, 후면 사진 사람 인식 안됨 | 521 |
+|              | 후면 사진의 각도 틀림           | 522 |
+|              | 정면, 후면 사진의 각도 틀림       | 523 |
+|              | 측면, 후면 사진의 각도 틀림       | 524 |
+|              | 정면, 측면, 후면 사진의 각도 틀림   | 525 |
+| 프로세스 에러      | 프로세스 처리 에러             | 550 |
+|              | 프로세스 처리 기타 에러          | 559 |
 
 **요청 이미지 결과 보기**
 
@@ -209,14 +240,17 @@ import uuid
 
 fimg_path = "path/to/your/front/image"
 simg_path = "path/to/your/side/image"
+bimg_path = "path/to/your/back/image"
 
 with open(fimg_path, "rb") as img_file:
     fimg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
 with open(simg_path, "rb") as img_file:
     simg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
+with open(bimg_path, "rb") as img_file:
+    bimg_b64 = base64.b64encode(img_file.read()).decode('utf-8')
 
 task_uuid = str(uuid.uuid4())
-rq_dict = {'Email': "your_email", "UserKey": "your_user_key", "APIKey": "your_api_key", 'uuid': task_uuid, "forigimg": fimg_b64, "sorigimg": simg_b64}
+rq_dict = {'Email': "your_email", "UserKey": "your_user_key", "APIKey": "your_api_key", 'uuid': task_uuid, "forigimg": fimg_b64, "sorigimg": simg_b64, "borigimg": bimg_b64}
 res = requests.post("http://api.remo.re.kr/api/analysis-skeleton", json=rq_dict).json()
 
 #정면 이미지 분석 결과 데이터를 byte데이터에서 array 데이터로 변환
@@ -231,9 +265,16 @@ s_bytes = base64.b64decode(split_b64_video(simg_b64).encode('utf-8'))
 side_nparr = np.frombuffer(s_bytes, np.uint8)
 side_img = cv2.imdecode(side_nparr, cv2.IMREAD_COLOR)
 
+#측면 이미지 분석 결과 데이터를 byte데이터에서 array 데이터로 변환
+bimg_b64 = res["borigimg"] #측면 이미지 분석 결과 데이터
+b_bytes = base64.b64decode(split_b64_video(bimg_b64).encode('utf-8'))
+back_nparr = np.frombuffer(b_bytes, np.uint8)
+back_img = cv2.imdecode(back_nparr, cv2.IMREAD_COLOR)
+
 # Display the image using OpenCV
 cv2.imshow('front_img', front_img)
 cv2.imshow('side_img', side_img)
+cv2.imshow('back_img', back_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
@@ -245,3 +286,5 @@ cv2.destroyAllWindows()
 <figure><img src="../.gitbook/assets/forig.jpg" alt="" width="375"><figcaption><p>fronigimg</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/sorig.jpg" alt="" width="375"><figcaption><p>sorigimg</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/out.jpg" alt="" width="375"><figcaption><p>borigimg</p></figcaption></figure>
