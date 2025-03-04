@@ -206,3 +206,5 @@ cv2.destroyAllWindows()
 {% endtabs %}
 
 **결과 이미지**
+
+<figure><img src="../.gitbook/assets/out (1).jpg" alt="" width="375"><figcaption><p>borigimg</p></figcaption></figure>

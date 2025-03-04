@@ -205,3 +205,5 @@ cv2.destroyAllWindows()
 {% endtabs %}
 
 **결과 이미지**
+
+<figure><img src="../.gitbook/assets/forig.jpg" alt="" width="375"><figcaption><p>forigimg</p></figcaption></figure>
