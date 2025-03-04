@@ -12,8 +12,10 @@
   * [이미지 체형 치수 분석 요청](size-analysis/analysis-request.md)
 * [골격 분석 API](skeleton-analysis/README.md)
   * [이미지 골격 분석 요청](skeleton-analysis/analysis-request.md)
-* [골격 분석(후면 분석 추가)](skeleton-analysis-back/README.md)
-  * [이미지 골격 분석 요청](skeleton-analysis-back/analysis-request.md)
+* [골격 분석(분리)](skeleton-analysis-split/README.md)
+  * [정면 이미지 골격 분석 요청](skeleton-analysis-split/front.md)
+  * [측면 이미지 골격 분석 요청](skeleton-analysis-split/side.md)
+  * [후면 이미지 골격 분석 요청](skeleton-analysis-split/back.md)
 * [미래 체형 API](future-shape-analysis/README.md)
   * [이미지 미래 체형 생성 요청](future-shape-analysis/generate-request.md)
 
