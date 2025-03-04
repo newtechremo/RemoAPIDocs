@@ -3,7 +3,7 @@ description: 소개 글
 hidden: true
 ---
 
-# 골격 분석(후면 분석 추가)
+# 골격 분석(분리)
 
 ### front image
 
