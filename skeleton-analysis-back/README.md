@@ -1,9 +1,8 @@
 ---
 description: 소개 글
-hidden: true
 ---
 
-# 골격 분석(분리)
+# 골격 분석(분리) API
 
 ### front image
 
