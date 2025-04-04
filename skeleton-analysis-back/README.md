@@ -15,7 +15,7 @@ hidden: true
 
 ### back image
 
-<figure><img src="../.gitbook/assets/out (1).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/back_result.jpg" alt=""><figcaption></figcaption></figure>
 
 ### keypoint index
 

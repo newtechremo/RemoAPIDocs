@@ -207,4 +207,4 @@ cv2.destroyAllWindows()
 
 **결과 이미지**
 
-<figure><img src="../.gitbook/assets/out (1).jpg" alt="" width="375"><figcaption><p>borigimg</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/back_result.jpg" alt="" width="375"><figcaption><p>borigimg</p></figcaption></figure>
