@@ -1,6 +1,6 @@
 # Table of contents
 
-* [골격 분석(전면, 측면, 후면 통합) API](README.md)
+* [골격 분석(전면, 측면 통합) API](README.md)
   * [이미지 골격 분석 요청](skeleton-analysis/analysis-request.md)
 * [골격 분석(전면, 후면, 좌, 우 분리) API](skeleton-analysis-back/README.md)
   * [정면 이미지 골격 분석 요청](skeleton-analysis-split/front.md)

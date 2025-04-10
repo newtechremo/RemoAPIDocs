@@ -4,6 +4,12 @@ description: 후면 이미지에 있는 측정 대상의 골격(skeleton)을 분
 
 # 후면 이미지 골격 분석 요청
 
+※ 전면, 후면, 측면1, 측면2 이미지 분리요청 방식
+
+※ 전면, 측면1 요청시, 1 credit 소비
+
+※ 전면, 후면, 측면1, 측면2 요청시, 2 credit 소비
+
 ### 후면 이미지 골격 분석 요청
 
 <mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-skeleton-v2-back`

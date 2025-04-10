@@ -4,6 +4,10 @@ description: 이미지에 있는 측정 대상의 골격(skeleton)을 분석하�
 
 # 이미지 골격 분석 요청
 
+※ 전면과 측면 이미지 통합 요청
+
+※ 1회 요청시 1credit 소비
+
 ### 이미지 골격 분석 요청
 
 <mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-skeleton`
