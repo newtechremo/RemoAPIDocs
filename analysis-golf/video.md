@@ -2,7 +2,7 @@
 
 ## 골프 분석 결과 비디오 요청
 
-<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-golf-video`
+<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-golf-draw`
 
 사용자 id(이메일), 분석된 비디오 uuid를 파라미터로 받아 골프분석 점수 값을 리턴합니다.
 
