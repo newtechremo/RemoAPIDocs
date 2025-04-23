@@ -24,3 +24,13 @@
 ```
 
 **응답 예시**
+
+{% tabs %}
+{% tab title="200" %}
+```
+{
+    "base64_video": "AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAK/7BtZGF0AAACugYF … (이하 생략)"
+}
+```
+{% endtab %}
+{% endtabs %}

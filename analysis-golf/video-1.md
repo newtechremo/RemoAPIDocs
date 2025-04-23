@@ -12,7 +12,7 @@
 
 **응답(json)**
 
-<table><thead><tr><th width="189">Name</th><th width="78">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>base64_video</code></td><td>string</td><td>base64로 인코딩 된 결과 비디오 문자열</td></tr></tbody></table>
+<table><thead><tr><th width="189">Name</th><th width="78">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>address</code></td><td>string</td><td>base64로 인코딩 된 address 구간 대표 이미지, 불러올 수 없을 시 null</td></tr><tr><td><code>takeback</code></td><td>string</td><td>base64로 인코딩 된 takeback 구간 대표 이미지, 불러올 수 없을 시 null</td></tr><tr><td><code>backswing</code></td><td>string</td><td>base64로 인코딩 된 backswing 구간 대표 이미지, 불러올 수 없을 시 null</td></tr><tr><td><code>backswingtop</code></td><td>string</td><td>base64로 인코딩 된 backswingtop 구간 대표 이미지, 불러올 수 없을 시 null</td></tr><tr><td><code>downswing</code></td><td>string</td><td>base64로 인코딩 된 downswing 구간 대표 이미지, 불러올 수 없을 시 null</td></tr><tr><td><code>impact</code></td><td>string</td><td>base64로 인코딩 된 impact 구간 대표 이미지, 불러올 수 없을 시 null</td></tr><tr><td><code>follow</code></td><td>string</td><td>base64로 인코딩 된 follow 구간 대표 이미지, 불러올 수 없을 시 null</td></tr><tr><td><code>finish</code></td><td>string</td><td>base64로 인코딩 된 finish 구간 대표 이미지, 불러올 수 없을 시 null</td></tr></tbody></table>
 
 **요청 예시**
 
@@ -24,3 +24,20 @@
 ```
 
 **응답 예시**
+
+{% tabs %}
+{% tab title="200" %}
+```
+{
+    "address": "AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAK/7BtZGF0AAACugYF … (이하 생략)",
+    "takeback": "AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAK/7BtZGF0AAACugYF … (이하 생략)",
+    "backswing": "AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAK/7BtZGF0AAACugYF … (이하 생략)",
+    "backswingtop": "AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAK/7BtZGF0AAACugYF … (이하 생략)",
+    "downswing": "AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAK/7BtZGF0AAACugYF … (이하 생략)",
+    "impact": "AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAK/7BtZGF0AAACugYF … (이하 생략)",
+    "follow": "AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAK/7BtZGF0AAACugYF … (이하 생략)",
+    "finish": "AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAK/7BtZGF0AAACugYF … (이하 생략)",
+}
+```
+{% endtab %}
+{% endtabs %}
