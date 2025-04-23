@@ -23,6 +23,7 @@
   * [골프 분석 결과 요청](analysis-golf/result.md)
   * [골프 분석 점수 요청](analysis-golf/undefined-1.md)
   * [골프 분석 결과 비디오 요청](analysis-golf/video.md)
+  * [골프 분석 구간 이미지 요청](analysis-golf/video-1.md)
 * [미래 체형 API](future-shape-analysis/README.md)
   * [이미지 미래 체형 생성 요청](future-shape-analysis/generate-request.md)
 

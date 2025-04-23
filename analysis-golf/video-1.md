@@ -1,10 +1,10 @@
-# 골프 분석 결과 비디오 요청
+# 골프 분석 구간 이미지 요청
 
-## 골프 분석 결과 비디오 요청
+## 골프 분석 구간 이미지 요청
 
-<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-golf-draw`
+<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-golf-images`
 
-사용자 id(이메일), 분석된 비디오 uuid를 파라미터로 받아 골프분석 결과 비디오를 리턴합니다.
+사용자 id(이메일), 분석된 비디오 uuid를 파라미터로 받아 골프분석 구간 이미지를 리턴합니다.
 
 **파라미터(json)**
 
