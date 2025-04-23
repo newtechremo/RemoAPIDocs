@@ -2,7 +2,7 @@
 
 ## 골프 분석 각도 요청
 
-<mark style="color:red;">`GET`</mark> `http://115.94.164.253:15003/golf/get-angle/{id}/{uuid}`
+<mark style="color:red;">`GET`</mark> `http://api.remo.re.kr/api/analysis-golf-result`
 
 사용자 id(이메일), 분석된 비디오 uuid를 파라미터로 받아 골프분석 각도 값을 리턴합니다.
 

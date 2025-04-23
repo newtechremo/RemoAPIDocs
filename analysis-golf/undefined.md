@@ -8,7 +8,7 @@
 
 **파라미터(json)**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>id</code></td><td>string(base64 )</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>base64_video</code></td><td>string</td><td>base64로 인코딩 된 골프 비디오 문자열</td><td>true</td></tr><tr><td><code>height</code></td><td>string</td><td>분석 대상의 키(cm)</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>id</code></td><td>string(base64 )</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>base64_video</code></td><td>string</td><td>base64로 인코딩 된 골프 비디오 문자열</td><td>true</td></tr><tr><td><code>height</code></td><td>string</td><td>분석 대상의 키(cm)</td><td>true</td></tr><tr><td><code>UserKey</code></td><td>string</td><td>발급 받은 유저 키 값</td><td>true</td></tr><tr><td><code>APIKey</code></td><td>string</td><td>발급 받은 API 키 값</td><td>true</td></tr></tbody></table>
 
 **응답(json)**
 

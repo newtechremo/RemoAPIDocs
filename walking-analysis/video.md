@@ -12,7 +12,7 @@ description: 비디오를 입력 받아 사용자의 보행을 분석하는 API�
 
 **파라미터(json)**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>base64_video</code></td><td>string(base64 )</td><td>base64로 인코딩 된 보행 비디오 문자열</td><td>true</td></tr><tr><td><code>id</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>height</code></td><td>string</td><td>분석 대상의 키(cm)</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td><code>base64_video</code></td><td>string(base64 )</td><td>base64로 인코딩 된 보행 비디오 문자열</td><td>true</td></tr><tr><td><code>id</code></td><td>string</td><td>유저 이메일 주소</td><td>true</td></tr><tr><td><code>height</code></td><td>string</td><td>분석 대상의 키(cm)</td><td>true</td></tr><tr><td></td><td></td><td></td><td>false</td></tr><tr><td></td><td></td><td></td><td>false</td></tr></tbody></table>
 
 **응답(json)**
 
