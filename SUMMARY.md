@@ -19,7 +19,6 @@
 * [골프 분석 API](analysis-golf/README.md)
   * [골프 비디오 분석 요청](analysis-golf/undefined.md)
   * [골프 분석 각도 요청](analysis-golf/angle.md)
-  * [골프 분석 결과 생성 여부 확인](analysis-golf/check.md)
   * [골프 분석 멘트 요청](analysis-golf/ment.md)
   * [골프 분석 결과 요청](analysis-golf/result.md)
   * [골프 분석 점수 요청](analysis-golf/undefined-1.md)
