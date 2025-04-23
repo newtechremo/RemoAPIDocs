@@ -2,7 +2,7 @@
 
 ## 골프 분석 결과 요청
 
-<mark style="color:red;">`GET`</mark> `http://115.94.164.253:15003/golf/get-val/{id}/{uuid}`
+<mark style="color:green;">`POST`</mark> `http://api.remo.re.kr/api/analysis-golf-result`
 
 사용자 id(이메일), 분석된 비디오 uuid를 파라미터로 받아 골프분석 결과 값을 리턴합니다.
 
@@ -17,7 +17,10 @@
 **요청 예시**
 
 ```json
-http://115.94.164.253:15003/golf/get-result/example@email.com/bc692864-0243-4d41-bce3-7658c92ef0c5
+{
+    “id”: “example@example.com”,
+    “uuid”: “bc692864-0243-4d41-bce3-7658c92ef0c5”
+}
 ```
 
 **응답 예시**

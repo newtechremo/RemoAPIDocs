@@ -21,7 +21,10 @@ description: 완료된 보행 분석 결과를 요청하는 API입니다.
 **요청 예시**
 
 ```json
-/get-result/example@example.com/bc692864-0243-4d41-bce3-7658c92ef0c5
+{
+    “id”: “example@example.com”,
+    “uuid”: “bc692864-0243-4d41-bce3-7658c92ef0c5”
+}
 ```
 
 **응답 예시**
