@@ -103,20 +103,3 @@ res = requests.post("http://115.94.164.253:15003/golf/analysis-await", json=rq_d
 
 <table><thead><tr><th width="164">Name</th><th width="88">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>State</code></td><td>int</td><td>성공 시 1, 실패 시 0</td></tr><tr><td><code>UserID</code></td><td>string</td><td>유저 이메일 주소</td></tr><tr><td><code>VideoUUID</code></td><td>string</td><td>영상 uuid</td></tr><tr><td><code>Message</code></td><td>string</td><td>성공 또는 실패 관련 안내 메세지</td></tr></tbody></table>
 
-
-
-| 대분류          | 소분류                   | 코드  |
-| ------------ | --------------------- | --- |
-| 입력 데이터 문제 발생 | 프로토콜 에러               | 400 |
-|              | 입력 데이터 없음             | 411 |
-|              | 첨부 이미지 에러             | 412 |
-|              | 첨부 이미지 에러(정면)         | 413 |
-|              | 사진이 10도 초과 기울어 있음(정면) | 418 |
-| 기타 이슈 발생     | 사용 유저 확인 안됨           | 420 |
-|              | APIKey 틀림             | 421 |
-|              | 크리딧 부족                | 422 |
-| 분석 이슈 발생     | 정면 사진 사람 인식 안됨        | 511 |
-|              | 정면 사진의 각도 틀림          | 514 |
-|              | 정면 이미지의 A자 포즈 아님      | 517 |
-| 프로세스 에러      | 프로세스 처리 에러            | 550 |
-|              | 프로세스 처리 기타 에러         | 559 |
