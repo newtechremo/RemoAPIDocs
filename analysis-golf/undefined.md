@@ -37,7 +37,7 @@ import uuid
 task_uuid = str(uuid.uuid4())
 rq_dict = {'bucket_url':"https://fourwk-public.s3.ap-northeast-2.amazonaws.com/motion-analysis-samples/golf.mp4",'id':"example@example.com",'uuid':video_uuid,'height':"160","credit":1000}
 
-res = requests.post("http://115.94.164.253:15003/golf/analysis-await", json=rq_dict)
+res = requests.post("http://api.remo.re.kr/api/analysis-golf", json=rq_dict)
 ```
 {% endtab %}
 {% endtabs %}
